@@ -70,6 +70,7 @@ Simply run `composer require carlos-mg89/symfony-captcha-bundle`
     ```
     $builder->add('captchaCode', CaptchaType::class, [
         'captchaConfig' => 'ExampleCaptcha',
+        'mapped' => false,
         'constraints' => [
             new ValidCaptcha([
                 'message' => 'Invalid captcha, please try again',
@@ -80,7 +81,7 @@ Simply run `composer require carlos-mg89/symfony-captcha-bundle`
  6. Now edit your Twig template with the new `captchaCode` (`CaptchaType`):
     ```
     {{ form_label(form.captchaCode) }}
-    {{ form_widget(form.captchaCode}) }}
+    {{ form_widget(form.captchaCode) }}
     ```
  7. Finally, add the Form validation:
     ```
